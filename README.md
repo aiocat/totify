@@ -13,3 +13,4 @@ Notification library for browser.
 - This package is works on browser without any setup. Just add script to your HTML file and done.
 - The package itself is also lightweight. And totify doesn't need a setup. Importing is enough.
 - I always try to keep usage simple as possible.
+- Notifications are customizable, Edit `#TOTIFY_NOTIFICATIONS` (eg. `#TOTIFY_NOTIFICATIONS div`) container with CSS.

@@ -6,7 +6,7 @@ var Totify = /** @class */ (function () {
     function Totify() {
     }
     /**
-     * Initialize totify settings (if don't exists)
+     * Initialize totify settings. (if don't exists)
      *
      * @remarks
      * This method is part of the {@link core-library#Totify | Totify subsystem}.
@@ -60,7 +60,6 @@ var Totify = /** @class */ (function () {
         notification.style.margin = "5px";
         notification.style.borderRadius = "5px";
         notification.style.cursor = "pointer";
-
         notification.onclick = function () { return notification.remove(); };
         switch (type) {
             case "INFO":
@@ -82,7 +81,54 @@ var Totify = /** @class */ (function () {
         }
         notificationDiv.appendChild(notification);
     };
+    /**
+     * Info wrapper for Totify.
+     *
+     * @remarks
+     * This method is part of the {@link core-library#Totify | Totify subsystem}.
+     *
+     * @param text - Notification content
+     *
+     */
+    Totify.info = function (text) {
+        Totify.build("INFO", text);
+    };
+    /**
+     * Warn wrapper for Totify.
+     *
+     * @remarks
+     * This method is part of the {@link core-library#Totify | Totify subsystem}.
+     *
+     * @param text - Notification content
+     *
+     */
+    Totify.warn = function (text) {
+        Totify.build("WARN", text);
+    };
+    /**
+     * Error wrapper for Totify.
+     *
+     * @remarks
+     * This method is part of the {@link core-library#Totify | Totify subsystem}.
+     *
+     * @param text - Notification content
+     *
+     */
+    Totify.error = function (text) {
+        Totify.build("ERROR", text);
+    };
+    /**
+     * Success wrapper for Totify.
+     *
+     * @remarks
+     * This method is part of the {@link core-library#Totify | Totify subsystem}.
+     *
+     * @param text - Notification content
+     *
+     */
+    Totify.success = function (text) {
+        Totify.build("SUCCESS", text);
+    };
     return Totify;
 }());
-export { Totify };
 //# sourceMappingURL=index.js.map

@@ -7,13 +7,13 @@ import type { NotificationType, PositionX, PositionY } from "./types";
 
 export class Totify {
   /**
-   * Initialize totify settings (if don't exists)
+   * Initialize totify settings. (if don't exists)
    *
    * @remarks
    * This method is part of the {@link core-library#Totify | Totify subsystem}.
    *
    */
-  public static init(posX: PositionX, posY: PositionY) {
+  public static init(posX: PositionX, posY: PositionY): void {
     let notificationDiv: HTMLElement | null = document.getElementById(
       "TOTIFY_NOTIFICATIONS"
     );
@@ -57,7 +57,7 @@ export class Totify {
    * @param text - Notification content
    *
    */
-  public static build(type: NotificationType, text: string) {
+  public static build(type: NotificationType, text: string): void {
     let notificationDiv: HTMLElement | null = document.getElementById(
       "TOTIFY_NOTIFICATIONS"
     );
@@ -68,6 +68,7 @@ export class Totify {
     notification.style.padding = "5px";
     notification.style.margin = "5px";
     notification.style.borderRadius = "5px";
+    notification.style.cursor = "pointer";
     notification.onclick = (): void => notification.remove();
 
     switch (type) {
@@ -90,5 +91,57 @@ export class Totify {
     }
 
     notificationDiv.appendChild(notification);
+  }
+
+  /**
+   * Info wrapper for Totify.
+   *
+   * @remarks
+   * This method is part of the {@link core-library#Totify | Totify subsystem}.
+   *
+   * @param text - Notification content
+   *
+   */
+  public static info(text: string): void {
+    Totify.build("INFO", text);
+  }
+
+  /**
+   * Warn wrapper for Totify.
+   *
+   * @remarks
+   * This method is part of the {@link core-library#Totify | Totify subsystem}.
+   *
+   * @param text - Notification content
+   *
+   */
+  public static warn(text: string): void {
+    Totify.build("WARN", text);
+  }
+
+  /**
+   * Error wrapper for Totify.
+   *
+   * @remarks
+   * This method is part of the {@link core-library#Totify | Totify subsystem}.
+   *
+   * @param text - Notification content
+   *
+   */
+  public static error(text: string): void {
+    Totify.build("ERROR", text);
+  }
+
+  /**
+   * Success wrapper for Totify.
+   *
+   * @remarks
+   * This method is part of the {@link core-library#Totify | Totify subsystem}.
+   *
+   * @param text - Notification content
+   *
+   */
+  public static success(text: string): void {
+    Totify.build("SUCCESS", text);
   }
 }
