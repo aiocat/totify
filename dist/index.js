@@ -2,9 +2,7 @@
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
-var Totify = /** @class */ (function () {
-    function Totify() {
-    }
+class Totify {
     /**
      * Initialize totify settings. (if don't exists)
      *
@@ -12,8 +10,8 @@ var Totify = /** @class */ (function () {
      * This method is part of the {@link core-library#Totify | Totify subsystem}.
      *
      */
-    Totify.init = function (posX, posY) {
-        var notificationDiv = document.getElementById("TOTIFY_NOTIFICATIONS");
+    static init(posX, posY) {
+        let notificationDiv = document.getElementById("TOTIFY_NOTIFICATIONS");
         if (notificationDiv)
             return;
         notificationDiv = document.createElement("div");
@@ -39,7 +37,7 @@ var Totify = /** @class */ (function () {
                 break;
         }
         document.body.appendChild(notificationDiv);
-    };
+    }
     /**
      * Notification builder for Totify.
      *
@@ -50,17 +48,17 @@ var Totify = /** @class */ (function () {
      * @param text - Notification content
      *
      */
-    Totify.build = function (type, text) {
-        var notificationDiv = document.getElementById("TOTIFY_NOTIFICATIONS");
+    static build(type, text) {
+        let notificationDiv = document.getElementById("TOTIFY_NOTIFICATIONS");
         if (!notificationDiv)
             return;
-        var notification = document.createElement("div");
+        let notification = document.createElement("div");
         notification.innerText = text;
         notification.style.padding = "5px";
         notification.style.margin = "5px";
         notification.style.borderRadius = "5px";
         notification.style.cursor = "pointer";
-        notification.onclick = function () { return notification.remove(); };
+        notification.onclick = () => notification.remove();
         switch (type) {
             case "INFO":
                 notification.style.background = "#3498db";
@@ -80,7 +78,7 @@ var Totify = /** @class */ (function () {
                 break;
         }
         notificationDiv.appendChild(notification);
-    };
+    }
     /**
      * Info wrapper for Totify.
      *
@@ -90,9 +88,9 @@ var Totify = /** @class */ (function () {
      * @param text - Notification content
      *
      */
-    Totify.info = function (text) {
+    static info(text) {
         Totify.build("INFO", text);
-    };
+    }
     /**
      * Warn wrapper for Totify.
      *
@@ -102,9 +100,9 @@ var Totify = /** @class */ (function () {
      * @param text - Notification content
      *
      */
-    Totify.warn = function (text) {
+    static warn(text) {
         Totify.build("WARN", text);
-    };
+    }
     /**
      * Error wrapper for Totify.
      *
@@ -114,9 +112,9 @@ var Totify = /** @class */ (function () {
      * @param text - Notification content
      *
      */
-    Totify.error = function (text) {
+    static error(text) {
         Totify.build("ERROR", text);
-    };
+    }
     /**
      * Success wrapper for Totify.
      *
@@ -126,9 +124,8 @@ var Totify = /** @class */ (function () {
      * @param text - Notification content
      *
      */
-    Totify.success = function (text) {
+    static success(text) {
         Totify.build("SUCCESS", text);
-    };
-    return Totify;
-}());
+    }
+}
 //# sourceMappingURL=index.js.map
