@@ -19,12 +19,12 @@ Notification library for browser.
 
 ## CDN(s)
 
-- https://cdn.jsdelivr.net/gh/aiocat/tofity@0.0.1/dist/index.min.js
+- https://cdn.jsdelivr.net/gh/aiocat/totify@0.0.1/dist/index.min.js
 
 ## Example
 
 ```js
-Totify.init("LEFT", "BOTTOM"); // Initialize tofity
+Totify.init("LEFT", "BOTTOM"); // Initialize totify
 Totify.info("Update avaible. Please update your system."); // An info notification
 Totify.error("Unexcepted Error"); // An error notification
 Totify.success("Account Created"); // A success notification
