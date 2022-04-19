@@ -19,7 +19,7 @@ Notification library for browser.
 
 ## CDN(s)
 
-- https://cdn.jsdelivr.net/gh/tofity/tofity@0.0.1/dist/index.min.js
+- https://cdn.jsdelivr.net/gh/aiocat/tofity@0.0.1/dist/index.min.js
 
 ## Example
 
